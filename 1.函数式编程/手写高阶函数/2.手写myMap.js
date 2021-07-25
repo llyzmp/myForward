@@ -1,6 +1,6 @@
 
 /**
- * 手写数组方法forEach
+ * 手写数组方法map
  * 语法: var new_array = arr.map(function callback(currentValue[, index[, array]]) {
  *      // Return element for new_array 
  *   }[, thisArg])
