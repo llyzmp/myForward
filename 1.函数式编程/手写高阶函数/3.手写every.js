@@ -21,11 +21,17 @@
   const O = Object(this);
    // 位运算符   将任意js值转化为数字,且不会出现NaN,意思就是所有非数值转换为0,所有大于等于0的数取整数部分
   const len = O.length >>> 0;
+  if(thisArg) {
+    T = thisArg;
+  }
+  // 定义一个标识
   let result = true;
   while(k < len) {
     if(k in O) {
+      // 记录返回值
       result = fn.call(T,O[k],k,O);
     }
+    // 如果有一个返回值不符合,则停止
     if(!result) {
       break;
     }
