@@ -28,6 +28,6 @@ Array.prototype.myFindIndex = function(fn,thisArg) {
 let arr = [1,2,3,4,5,6,7,7,8];
 
 let res = arr.myFindIndex((ele,i,arr)=>{
-  return ele > 10
+  return ele > 5
 })
 console.log('第一个大于5的索引为',res);
