@@ -36,10 +36,11 @@ Array.prototype.myFind = function(fn,thisArg) {
 }
 
 
-let arr = [1,23,4,5,6,78,9,10];
+// let arr = [1,23,4,5,6,78,9,10];
+let arr = [{a:1,b:8},{a:6,b:10}];
 
 let result = arr.myFind((ele,i,arr) => {
   // console.log('aaa',ele,i,arr);
-  return ele > 10
+  return ele.a > 5
 })
 console.log(result);
