@@ -19,13 +19,24 @@ console.log(memoizedArea(5));  // 78.53981633974483
 console.log(memoizedArea(5));  // 78.53981633974483
 
 
-// 模拟缓存记忆函数
-
-function myMemorize() {
-
+// 模拟缓存记忆函数， 返回一个函数，返回的函数可以传参
+// 思路： 在函数内创建一个对象，参数为一个函数，把参数取出来作为对象的键，
+function myMemorize(fn) {
+  let obj = {};
+  let key = JSON.stringify(arguments);
+  return function(...args) {
+    if(obj[key]) {
+      return obj[key]
+    }
+    return obj[key] = fn.call(fn,...args)
+  }
 }
 
 
 
+console.log(memoizedArea(4));  // 第一次打印了  传入的半径 4     50.26548245743669
+console.log(memoizedArea(4));  // 50.26548245743669
+console.log(memoizedArea(4));  // 50.26548245743669
+console.log(memoizedArea(4));  // 50.26548245743669
 
 
