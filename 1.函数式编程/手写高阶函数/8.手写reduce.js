@@ -28,3 +28,7 @@ let arr = [1,2,3,4,5,5,6,6,7,9];
 
 console.log('aaa',arr.reduce((acc,cur)=>acc+cur));
 console.log('bbb',arr.myReduce((acc,cur)=>acc+cur));
+
+// 传入初始值
+console.log('aaa1',arr.myReduce((acc,cur)=>acc+cur,30));
+console.log('bbb1',arr.myReduce((acc,cur)=>acc+cur,30));
