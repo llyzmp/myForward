@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="./95.节流防抖.js"></script>
+</head>
+<body>
+  <button  id="btn">点我</button>
+  <script>
+    function fangdou() {
+      console.log('防抖111');
+    }
+    function jieliu() {
+      console.log('节流111');
+    }
+    var btn = document.getElementById('btn');
+    // 防抖 无论怎么点只会执行一次
+    // btn.addEventListener('click',debounce(fangdou,500))
+    
+    // 节流 1000毫秒内只执行一次
+    btn.addEventListener('click',throttle(jieliu,1000));
+    </script>
+  
+</body>
+</html>
