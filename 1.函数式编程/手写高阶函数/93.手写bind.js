@@ -17,7 +17,7 @@ Function.prototype.myBind = function(thisArg) {
   let arg1 = Array.from(arguments).slice(1);
   function F() {
     let arg2 = Array.from(arguments);
-    return _this.apply(this instanceof F ? this /*作为构造函数使用 */ : thisArg.arg1.contract(arg2))
+    return _this.apply(this instanceof F ? this /*作为构造函数使用 */ : thisArg, arg1.contract(arg2))
   }
   // 作为构造函数使用,后续通过new创建实例对象,要可以使用原型上的方法
   F.prototype = Object.create(this.prototype);
